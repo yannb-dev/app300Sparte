@@ -1,5 +1,200 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
+/* =======================================================================
+Font Family et Variables
+======================================================================= */
+@font-face {
+    font-family: 'Cinzel';
+    src: url(fonts/Cinzel-Regular.woff) format('woff'),
+        url(fonts/Cinzel-Regular.woff2) format('woff2');
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Cinzel-Bold';
+    src: url(fonts/Cinzel-Bold.woff) format(woff),
+        url(fonts/Cinzel-Bold.woff2) format(woff2);
+    font-style: normal;
+    font-display: swap; 
+}
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/Inter-Regular.woff) format(woff),
+        url(fonts/Inter-Regular.woff2) format(woff2);
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Radjhani';
+    src: url(fonts/Rajdhani-Regular.woff) format(woff),
+        url(fonts/Rajdhani-Regular.woff2) format(woff2);
+}
+
+:root{
+    --colorBronze : 139 105 20;
+    --colorPourpre : 71 14 14;
+    --colorObsidienne: 26 26 26;
+    --colorAcier : 61 68 81;
+    --colorLune : 197 197 197;
+}
+    
+/* =======================================================================
+BODY
+======================================================================= */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: url(img/pageLogin.png);
+    background-size: cover;
+    
+}
+/* =======================================================================
+TITRE
+======================================================================= */
+header{
+    height: 15%;
+    width: 100%;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    h1{
+        font-family: 'Cinzel-Bold';
+        font-size: 4em;
+        color: rgb(var(--colorBronze))
+    }
+    h3{
+        font-family: 'Radjhani';
+        margin-left: 100px;
+    }
+}
+/* =======================================================================
+SECTION SIGNU UP LOG IN
+======================================================================= */
+main{
+    height: 85%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logIn{
+    height: 500px;
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(var(--colorBronze) / 0.4);
+    border-radius: 8px;
+    transform: translateX(-30%);
+    box-shadow: 3px 3px 6px gray;
+
+    .left{
+        height: 90%;
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+        position: relative;
+        padding-top: 15%;
+        box-sizing: border-box;
+
+        .containerAngle{
+            height: 25%;
+            width: 25%;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+
+            img{
+                height: auto;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 0px 5px 0px 0px;
+
+            }
+        }
+        .containerAngle:hover{
+            transform: scale(1.05) translateX(-2px) translateY(3px);
+            cursor: pointer;
+        }
+        .inputMail, .inputPassword{
+            height: 40px;
+            width: 200px;
+            border-bottom: 3px solid rgb(var(--colorBronze));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            input{
+                border: none;
+                text-align: center;
+                font-family: 'Cinzel';
+
+            }
+            input:focus{
+                outline: none;
+            }
+        }
+        #mdpLost{
+            margin-top: 30px;
+            text-decoration: none;
+            color: rgb(var(--colorObsidienne));
+            font-family: 'Inter';
+            font-size: 0.8em;
+        }
+        #connexionBtn{
+            margin-top: 30px;
+            font-family: 'Cinzel';
+            font-size: 1.2em;
+            padding: 5px;
+            background-color: rgb(var(--colorPourpre));
+            color: white;
+            border-radius: 4px;
+            
+        }
+        #connexionBtn:hover{
+            cursor: pointer;
+        }
+    }
+    .right{
+        height: 90%;
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        padding-top: 50px;
+        padding-left: 20px;
+        box-sizing: border-box;
+
+        h3{
+            font-family: 'Inter';
+            color: white;
+            font-size: 1.4em;
+        }
+        ul{
+            list-style-type: none;
+            color: white;
+            font-size: 1em;
+        }
+        li{
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+
+        }
+        li img{
+            height: 25px;
+            width: 25px;
+            margin-right: 10px;
+
+        }
+    }
 }
