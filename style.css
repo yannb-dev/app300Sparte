@@ -82,7 +82,7 @@ main{
     align-items: center;
     justify-content: center;
 }
-.logIn{
+.form{
     height: 500px;
     width: 900px;
     display: flex;
@@ -94,77 +94,141 @@ main{
     box-shadow: 3px 3px 6px gray;
 
     .left{
-        height: 90%;
+        height: 460px;
         width: 45%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: white;
         border-radius: 5px;
-        position: relative;
-        padding-top: 15%;
-        box-sizing: border-box;
+        overflow: hidden;
 
-        .containerAngle{
-            height: 25%;
-            width: 25%;
-            position: absolute;
-            top: 0;
-            right: 0;
+        
+        .containerDoubleCarte{
+            height: 920px;
+            width: 100%;
 
 
-            img{
-                height: auto;
-                width: 100%;
-                object-fit: cover;
-                border-radius: 0px 5px 0px 0px;
-
-            }
-        }
-        .containerAngle:hover{
-            transform: scale(1.05) translateX(-2px) translateY(3px);
-            cursor: pointer;
-        }
-        .inputMail, .inputPassword{
-            height: 40px;
-            width: 200px;
-            border-bottom: 3px solid rgb(var(--colorBronze));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            input{
-                border: none;
-                text-align: center;
-                font-family: 'Cinzel';
-
-            }
-            input:focus{
-                outline: none;
-            }
-        }
-        #mdpLost{
-            margin-top: 30px;
-            text-decoration: none;
-            color: rgb(var(--colorObsidienne));
-            font-family: 'Inter';
-            font-size: 0.8em;
-        }
-        #connexionBtn{
-            margin-top: 30px;
-            font-family: 'Cinzel';
-            font-size: 1.2em;
-            padding: 5px;
-            background-color: rgb(var(--colorPourpre));
-            color: white;
-            border-radius: 4px;
             
+            .logIn{
+                height: 460px;
+                width: 100%;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+
+                .containerInput{
+                    border-bottom: 2px solid rgb(var(--colorBronze));
+                    margin-bottom: 40px;
+
+                    input{
+                        border: none;
+                        text-align: center;
+                        font-family: 'cinzel';
+                    }
+                }
+                a{
+                    text-decoration: none;
+                    color: black;
+                    font-family: 'Inter';
+                    font-size: 0.8em;
+                    margin-bottom: 10px;
+                }
+                button{
+                    background-color: rgb(var(--colorPourpre));
+                    color: white;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 4px;
+                    font-family: 'Cinzel';
+                    margin-top: 20px;
+                    cursor: pointer;
+                }
+                button:hover{
+                    transform: scale(1.03);
+                }
+                a:hover{
+                    transform: scale(1.03);
+                }
+            }
+            .signUp{
+                height: 460px;
+                width: 100%;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+
+                .containerInput{
+                    border-bottom: 2px solid rgb(var(--colorBronze));
+                    margin-bottom: 20px;
+
+                    input{
+                        border: none;
+                        text-align: center;
+                        font-family: 'cinzel';
+                    }
+                }
+                a{
+                    text-decoration: none;
+                    color: black;
+                    font-family: 'Inter';
+                    font-size: 0.8em;
+                    margin-bottom: 10px;
+                }
+                button{
+                    background-color: rgb(var(--colorPourpre));
+                    color: white;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 4px;
+                    font-family: 'Cinzel';
+                    margin-top: 20px;
+                    cursor: pointer;
+                }
+                button:hover{
+                    transform: scale(1.03);
+                }
+                a:hover{
+                    transform: scale(1.03);
+                }
+                
+            }
+            
+
         }
-        #connexionBtn:hover{
-            cursor: pointer;
+        .slideUp{
+            animation: slideUp 600ms ease-out forwards;
         }
+        .slideDown{
+            animation: slideDown 600ms ease-out forwards;
+        }
+        
     }
-    .right{
+        
+    
+}
+@keyframes slideUp {
+            0% {
+               transform: translateY(0%);
+            }
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+@keyframes slideDown {
+            0% {
+               transform: translateY(-50%);
+            }
+            100% {
+                transform: translateY(0%);
+            }
+        }
+.right{
         height: 90%;
         width: 45%;
         display: flex;
@@ -190,11 +254,10 @@ main{
             align-items: center;
 
         }
-        li img{
+        li .iconecheck{
             height: 25px;
             width: 25px;
             margin-right: 10px;
 
         }
     }
-}
