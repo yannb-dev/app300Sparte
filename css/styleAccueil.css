@@ -1,40 +1,61 @@
 /* =======================================================================
 Font Family et Variables
 ======================================================================= */
+:root{
+    --backgroundImg : url(/img/pageHome.png);
+
+    --colorLune : 197 197 197;
+    --colorObsidienne: 26 26 26;
+    --colorBronze :139 105 20;
+    --colorAcier : 61 68 81;
+    --colorPourpre : 71 14 14;
+    --colorBlack : 0 0 0;
+    --badgeColor : "";
+    --containerWeekColor : 139 105 20;
+
+
+}
+:root.dark {
+    --backgroundImg : url(/img/pageHomeDark.png);
+    
+    --colorLune : 0 0 0;
+    --colorObsidienne: 100 100 100;
+    --colorBronze : 153 153 153;
+    --colorAcier : 179 179 179;
+    --colorPourpre : 204 204 204;
+    --colorBlack : 200 200 200;
+    --badgeColor : 200 200 200;
+    --containerWeekColor : 200 200 200;
+
+}
 @font-face {
     font-family: 'Cinzel';
-    src: url(fonts/Cinzel-Regular.woff) format('woff'),
-        url(fonts/Cinzel-Regular.woff2) format('woff2');
+    src: url(/fonts/Cinzel-Regular.woff) format('woff'),
+        url(/fonts/Cinzel-Regular.woff2) format('woff2');
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Cinzel-Bold';
-    src: url(fonts/Cinzel-Bold.woff) format(woff),
-        url(fonts/Cinzel-Bold.woff2) format(woff2);
+    src: url(/fonts/Cinzel-Bold.woff) format(woff),
+        url(/fonts/Cinzel-Bold.woff2) format(woff2);
     font-style: normal;
     font-display: swap; 
 }
 @font-face {
     font-family: 'Inter';
-    src: url(fonts/Inter-Regular.woff) format(woff),
-        url(fonts/Inter-Regular.woff2) format(woff2);
+    src: url(/fonts/Inter-Regular.woff) format(woff),
+        url(/fonts/Inter-Regular.woff2) format(woff2);
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Radjhani';
-    src: url(fonts/Rajdhani-Regular.woff) format(woff),
-        url(fonts/Rajdhani-Regular.woff2) format(woff2);
+    src: url(/fonts/Rajdhani-Regular.woff) format(woff),
+        url(/fonts/Rajdhani-Regular.woff2) format(woff2);
 }
 
-:root{
-    --colorBronze : 139 105 20;
-    --colorPourpre : 71 14 14;
-    --colorObsidienne: 26 26 26;
-    --colorAcier : 61 68 81;
-    --colorLune : 197 197 197;
-}
+
 /* =======================================================================
 BODY
 ======================================================================= */
@@ -46,12 +67,17 @@ BODY
 body{
     height: 100vh;
     width: 100%;
-    background: url(img/pageHome.png);
+    background: var(--backgroundImg);
     background-size: cover;
     display: flex;
     flex-direction: column;
-    padding-left: 500px;
+    padding-left: 550px;
+    padding-right: 150px;
     box-sizing: border-box;
+
+}
+body.dark{
+    background: var(--backgroundImg);
 }
 header{
     height: 80px;
@@ -59,7 +85,6 @@ header{
     display: flex;
     align-items: center;
     justify-content: end;
-    padding-right: 60px;
     box-sizing: border-box;
 
     .toggleDarkMode{
@@ -73,13 +98,19 @@ header{
         background-color: white;
         border-radius: 15px;
         cursor: pointer;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.568);
 
         .rond{
             height: 26px;
             width: 26px;
             border-radius: 50%;
             background-color: black;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.288);
         }
+        
+    }
+    .active{
+        justify-content: end;
     }
 }
 nav{
@@ -100,42 +131,74 @@ nav{
     justify-content: center;
     align-items: center;
     font-family: 'cinzel';
+    color: rgb(var(--colorObsidienne));
 }
 .containerMenu:hover{
     background-color: rgb(var(--colorObsidienne));
     color: rgb(var(--colorLune));
     cursor: pointer;
 }
-.containerBadge{
-    height: 200px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 100px;
-}
-.badge{
-    height: 100%;
-    width: 200px;
-
-    img{
-        height: 100%;
-        object-fit: cover;
-    }
-
-}
 .totalPoint{
     text-align: center;
     font-family: 'cinzel';
     font-size: 2em;
     color: rgb(var(--colorPourpre));
-    margin-top: 20px;
+    margin-top: 60px;
 }
+.containerLotBadge{
+    height: 250px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    border: 3px solid rgb(var(--colorBronze));
+}
+.containerBadge{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p{
+        font-family: 'cinzel';
+        margin: 5px;
+    }
+}
+
+.badge{
+    height: 160px;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(var(--badgeColor));
+    border-radius: 50%;
+    position: relative;
+
+
+    img{
+
+        height: 75%;
+        object-fit: cover;
+    }
+}
+.circular-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+        transform: rotate(-90deg); /* Commence en haut */
+    }
+.animProgress {
+        transition: stroke-dashoffset 1s ease-out 0.5s;
+}
+
 .containerPrincipal{
     height: 400px;
     width: 100%;
     margin-top: 30px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
 
 }
@@ -172,6 +235,7 @@ nav{
         justify-content: start;
         font-family: 'inter';
         padding-left: 30px;
+        color: rgb(var(--colorObsidienne));
 
         p{
             margin-left: 30px;
@@ -192,6 +256,7 @@ nav{
     p{
         font-family: 'inter';
         margin-top: 10px;
+        color: rgb(var(--colorObsidienne));
     }
 }
 .containerWeek{
@@ -199,24 +264,40 @@ nav{
     justify-content: space-around;
     border-radius: 10px;
     border: 3px solid rgb(var(--colorBronze));
+    background-color: rgb(var(--containerWeekColor));
 
     .calendarIcon{
         margin-top: 10px;
         height: 50%;
+        color: rgb(var(--colorLune));
 
         img{
             height: 100%;
             width: auto;
             object-fit: cover;
+            
         }
+        img:hover{
+        transform: scale(1.03);
     }
-
+    }
 }
 .citation{
+    border-radius: 10px;
+    border: 3px solid rgb(var(--colorBronze));
+    width: 350px;
+
     h1{
-        font-family: 'Radjhani';   
+        font-family: 'Radjhani'; 
+        color: rgb(var(--colorObsidienne));
+        margin-left: 5px;
+        margin-top: 50px;
     }
     p{
         font-family: 'Cinzel';
+        color: rgb(var(--colorObsidienne));
+        margin: 30px 20px 0px 20px;
+        text-align: justify;
+
     }
 }

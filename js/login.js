@@ -2,6 +2,7 @@ const btnSignUp = document.getElementById('btnSignUp');
 const btnLogIn = document.getElementById('btnLogIn'); 
 const boite = document.getElementById('slide');
 
+
 console.log(btnSignUp, btnLogIn, boite);
 
 btnSignUp.addEventListener('click',()=>{
@@ -20,5 +21,4 @@ btnLogIn.addEventListener('click',()=>{
     console.log('Slide vers logIn !');
     
 })
-
 

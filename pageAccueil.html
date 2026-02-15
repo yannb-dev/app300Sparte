@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styleAccueil.css">
+    <!-- PRECHARGEMENT DES IMAGES -->
+     <link rel="preload"  as="image" href="/img/pageHome.png">
+     <link rel="preload" as="image" href="/img/pageHomeDark.png">
+     <!-- CSS APRES PRECHARGEMENT -->
+    <link rel="stylesheet" href="css/styleAccueil.css">
 </head>
 <body>
     <header>
-        <div class="toggleDarkMode">
-            <div class="rond"></div>
+        <div id="darkMode" class="toggleDarkMode">
+            <div id="bulle" class="rond"></div>
         </div>
     </header>
     <nav>
@@ -18,18 +22,63 @@
         <div class="containerMenu">Chrono</div>
         <div class="containerMenu">Profil</div>
     </nav>
-    <section class="containerBadge">
-        <div class="badge badgeMessager">
-            <img src="img/badge.png" alt="">
+    <p class="totalPoint">4389 pts</p>
+    <section class="containerLotBadge">
+        <div class="containerBadge">
+            <p>Team Messager</p>
+            <p>2100 pts</p>
+            <div class="badge badgeMessager">
+                <img src="img/badge.png" alt="">
+                <svg class="circular-progress" width="160" height="160">
+                <circle cx="80" cy="80" r="70" 
+                        stroke="#e8e8e8" stroke-width="8" fill="none"/>
+                <circle id="progress-circleMessager"
+                        class="animProgress"
+                        cx="80" cy="80" r="70" 
+                        stroke="#8b6914b3" stroke-width="8" fill="none"
+                        stroke-dasharray="565.48"
+                        stroke-dashoffset="565.48"
+                        stroke-linecap="round"/>
+                </svg>
+            </div>
         </div>
-        <div class="badge badgeWarrior">
-            <img src="img/badge.png" alt="">
+        <div class="containerBadge">
+            <p>Team Warrior</p>
+            <p>1200 pts</p>
+            <div class="badge badgeWarrior">
+                <img src="img/badge.png" alt="">
+                <svg class="circular-progress" width="160" height="160">
+                <circle cx="80" cy="80" r="70" 
+                        stroke="#e8e8e8" stroke-width="8" fill="none"/>
+                <circle id="progress-circleWarrior"
+                        class="animProgress"
+                        cx="80" cy="80" r="70" 
+                        stroke="#8b6914b3" stroke-width="8" fill="none"
+                        stroke-dasharray="565.48"
+                        stroke-dashoffset="565.48"
+                        stroke-linecap="round"/>
+                </svg>
+            </div>
         </div>
-        <div class="badge badgeStronger">
-            <img src="img/badge.png" alt="">
+        <div class="containerBadge">
+            <p>Team Stronger</p>
+            <p>380 pts</p>
+            <div class="badge badgeStronger">
+                <img src="img/badge.png" alt="">
+                <svg class="circular-progress" width="160" height="160">
+                <circle cx="80" cy="80" r="70" 
+                        stroke="#e8e8e8" stroke-width="8" fill="none"/>
+                <circle id="progress-circleStronger"
+                        class="animProgress"
+                        cx="80" cy="80" r="70" 
+                        stroke="#8b6914b3" stroke-width="8" fill="none"
+                        stroke-dasharray="565.48"
+                        stroke-dashoffset="565.48"
+                        stroke-linecap="round"/>
+                </svg>
         </div>
+        </div>    
     </section>
-    <p class="totalPoint">12343 pts</p>
     <section class="containerPrincipal">
         <div class="planning">
             <div class="containerDate">
@@ -59,39 +108,39 @@
             <div class="containerWeek">
                 <div class="calendarIcon">
                     <img src="img/calendar-alt.svg" alt="">
-                    <p>date</p>
+                    <p class="jour" id="jourA">date</p>
                 </div>
                 <div class="calendarIcon">
                     <img src="img/calendar-alt.svg" alt="">
-                    <p>date</p>
+                    <p class="jour" id="jourB">date</p>
                 </div>
                 <div class="calendarIcon">
                     <img src="img/calendar-alt.svg" alt="">
-                    <p>date</p>
+                    <p class="jour" id="jourC">date</p>
                 </div>
                 <div class="calendarIcon">
                     <img src="img/calendar-alt.svg" alt="">
-                    <p>date</p>
+                    <p class="jour" id="jourD">date</p>
                 </div>
                 <div class="calendarIcon">
                     <img src="img/calendar-alt.svg" alt="">
-                    <p>date</p>
+                    <p class="jour" id="jourE">date</p>
                 </div>
                 <div class="calendarIcon">
                     <img src="img/calendar-alt.svg" alt="">
-                    <p>date</p>
+                    <p class="jour" id="jourF">date</p>
                 </div>
                 <div class="calendarIcon">
                     <img src="img/calendar-alt.svg" alt="">
-                    <p>date</p>
+                    <p class="jour" id="jourG">date</p>
                 </div>
             </div>
         </div>
         <div class="citation">
             <h1>Citation du jour</h1>
-            <p>Citation</p>
+            <p>"Fais mieux, ou reste où tu es, et abandonne l'espoir de retourner sain et sauf à Sparte" - Une mère à son fils </p>
         </div>
     </section>
-    <script src="index.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>
