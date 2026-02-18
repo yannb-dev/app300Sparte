@@ -243,20 +243,67 @@ nav{
     }
 }
 .containerTraining{
+    height: 100%;
     border-radius: 10px;
     border: 3px solid rgb(var(--colorBronze));
     display: flex;
-    justify-content: space-around;
-    padding-top: 20px;
+    padding: 10px 10px 10px 10px;
+    box-sizing: border-box;
 
-    h3{
-        font-family: 'Cinzel';
-        color: rgb(var(--colorBronze));
+
+    #iconLeft, #iconRight{
+        height: 100%;
+        width: 20px;
+        display: flex;
+        align-items: center;
     }
-    p{
+    #iconRight:hover{
+        transform: scale(1.2);
+    }
+    #iconLeft:hover{
+        transform: scale(1.2);
+    }
+    .containerSlideHidden{
+        
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+
+    #slideContainer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 100%);
+        transition: 200ms ease;
+        
+    }
+    .warmUp, .bodyTraining, .streatch{
+        height: 100%;
+        width: 100%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        box-sizing: border-box;
+        
+        
+    }
+    .titre{
+        font-family: 'cinzel';
+        text-align: center;
+    }
+    .corps{
         font-family: 'inter';
-        margin-top: 10px;
-        color: rgb(var(--colorObsidienne));
+    }
+    .commentaire{
+        font-family: 'inter';
+        text-align: justify;
     }
 }
 .containerWeek{
@@ -271,14 +318,9 @@ nav{
         height: 50%;
         color: rgb(var(--colorLune));
 
-        img{
-            height: 100%;
-            width: auto;
-            object-fit: cover;
-            
-        }
-        img:hover{
+        i:hover{
         transform: scale(1.03);
+        color: rgb(var(--colorObsidienne));
     }
     }
 }

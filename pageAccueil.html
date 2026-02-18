@@ -9,13 +9,16 @@
      <link rel="preload" as="image" href="/img/pageHomeDark.png">
      <!-- CSS APRES PRECHARGEMENT -->
     <link rel="stylesheet" href="css/styleAccueil.css">
+    <script src="https://kit.fontawesome.com/56a11437f8.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<!-- =========================================== HEADER ========================================= -->
     <header>
         <div id="darkMode" class="toggleDarkMode">
             <div id="bulle" class="rond"></div>
         </div>
     </header>
+<!-- =============================================== NAVIGATION ======================================== -->
     <nav>
         <div class="containerMenu">Accueil</div>
         <div class="containerMenu">Performance</div>
@@ -23,6 +26,7 @@
         <div class="containerMenu">Profil</div>
     </nav>
     <p class="totalPoint">4389 pts</p>
+<!-- =================================================== BADGE =============================================== -->
     <section class="containerLotBadge">
         <div class="containerBadge">
             <p>Team Messager</p>
@@ -79,9 +83,10 @@
         </div>
         </div>    
     </section>
+<!-- ==============================================INFO SEANCE ============================================ -->
     <section class="containerPrincipal">
         <div class="planning">
-            <div class="containerDate">
+            <div class="containerDate"> 
                 <div class="titre">
                     <h2>Date</h2>
                     <p>Titre séance</p>
@@ -91,47 +96,71 @@
                     <p>profil : Warrior</p>
                 </div>
             </div>
+            <!-- ----------------Détail Séance --------------- -->
             <div class="containerTraining">
-                <div class="warmUp">
-                    <h3>Warm-Up</h3>
-                    <p>10min Row <br>10min Ski Erg</p>
+                <div id="iconLeft">
+                    <i class="fa-solid fa-circle-chevron-left"></i>
                 </div>
-                <div class="bodyTraining">
-                    <h3>Body</h3>
-                    <p>50Pull Up <br>800mCAP <br>5tours</Colg></p>
+                <div class="containerSlideHidden">
+                    <div id="slideContainer">
+                    <div class="warmUp">
+                        <div class="titre">Warm-Up</div>
+                        <div class="corps">10min rameur + 10min Vélo</div>
+                        <p class="commentaire">
+                            Echauffement sans intensité, respecter le principe de progressivité.
+                        </p>
+                    </div>
+                    <div class="bodyTraining">
+                        <div class="titre">Body</div>
+                        <div class="corps">10min rameur + 10min Vélo</div>
+                        <p class="commentaire">
+                            Echauffement sans intensité, respecter le principe de progressivité.
+                        </p>
+                    </div>
+                    <div class="streatch">
+                        <div class="titre">Streatch</div>
+                        <div class="corps">10min rameur + 10min Vélo</div>
+                        <p class="commentaire">
+                            Echauffement sans intensité, respecter le principe de progressivité.
+                        </p>
+                    </div>
+                    
                 </div>
-                <div class="rest">
-                    <h3>Streatch</h3>
-                    <p>10min Bike</p>
                 </div>
+                
+                <div id="iconRight">
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </div>
+
             </div>
+            <!-- -------------------Détail calendrier ----------------- -->
             <div class="containerWeek">
                 <div class="calendarIcon">
-                    <img src="img/calendar-alt.svg" alt="">
+                    <i class="fa-solid fa-calendar-day fa-2x"></i>
                     <p class="jour" id="jourA">date</p>
                 </div>
                 <div class="calendarIcon">
-                    <img src="img/calendar-alt.svg" alt="">
+                   <i class="fa-solid fa-calendar-day fa-2x"></i>
                     <p class="jour" id="jourB">date</p>
                 </div>
                 <div class="calendarIcon">
-                    <img src="img/calendar-alt.svg" alt="">
+                    <i class="fa-solid fa-calendar-day fa-2x"></i>
                     <p class="jour" id="jourC">date</p>
                 </div>
                 <div class="calendarIcon">
-                    <img src="img/calendar-alt.svg" alt="">
+                    <i class="fa-solid fa-calendar-day fa-2x"></i>
                     <p class="jour" id="jourD">date</p>
                 </div>
                 <div class="calendarIcon">
-                    <img src="img/calendar-alt.svg" alt="">
+                    <i class="fa-solid fa-calendar-day fa-2x"></i>
                     <p class="jour" id="jourE">date</p>
                 </div>
                 <div class="calendarIcon">
-                    <img src="img/calendar-alt.svg" alt="">
+                    <i class="fa-solid fa-calendar-day fa-2x"></i>
                     <p class="jour" id="jourF">date</p>
                 </div>
                 <div class="calendarIcon">
-                    <img src="img/calendar-alt.svg" alt="">
+                    <i class="fa-solid fa-calendar-day fa-2x"></i>
                     <p class="jour" id="jourG">date</p>
                 </div>
             </div>
